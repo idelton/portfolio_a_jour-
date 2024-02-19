@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Portfolio</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+         crossorigin="anonymous" referrerpolicy="no-referrer">
+      <!--Bootstrap link-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" 
+         integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+         crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+      <!--Style Css link-->
+      <link rel="stylesheet" href="style.css">
+      <!--Tailwind link-->
+      <script src="https://cdn.tailwindcss.com"></script>
+   </head>
+   <body >
+      <nav class="bg-gray-900 fixed top-0 left-0 w-full z-50">
+         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+               <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                  <!-- Mobile menu button-->
+                  <button onclick="menuButton()" id="btn" type="button" class="relative inline-flex items-center justify-center 
+                     rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white"
+                     aria-controls="mobile-menu" aria-expanded="false">
+                     <span class="absolute -inset-0.5"></span>
+                     <!-- 
+                        Menu ouvert : "caché", Menu fermé : "bloquer"
+                        -->
+                     <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                     </svg>
+                     <!--
+                        Icône lorsque le menu est ouvert.
+                         
+                         Menu ouvert : "bloquer", Menu fermé : "caché"
+                         -->
+                     <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="flex flex-1 justify-between items-center">
+                  <div class="flex flex-shrink-0 items-center">
+                     <img class="h-8 w-auto rounded-md" src="photo/photoheader.png" alt="Logo">
+                  </div>
+                  <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
+                     <div onclick="menuButton()" id="btnClose">
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        <a href="#Accueil" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Accueil</a>
+                        <a href="#A_Propos" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">A Propos</a>
+                        <a href="#Competences" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Compétences</a>
+                        <a href="#Projet" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projet</a>
+                        <a href="#Contact" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                     </div>
+                  </div>
+                  <div class="flex items-center">
+                     <a href="cv/Software_Name.pdf_(1)_copie.pdf" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">CV</a>
+                     <button class="fa_nav" style="background-color: white; border-radius: 35%;" onclick="window.location.href='https://www.linkedin.com/in/idr07/'">
+                     <i class="fab fa-linkedin"></i>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Mobile menu, afficher/masquer en fonction de l'état du menu. -->
+         <div class="sm:hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+               <a href="#Accueil" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Accueil</a>
+               <a href="#A_Propos" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">A Propos</a>
+               <a href="#Competences" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Compétences</a>
+               <a href="#Projet" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projet</a>
+               <a href="#Contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+         </div>
+      </nav>
+      <!--header logo -->
+      <div  id="Accueil" >
+         <img class="img-header-1" src="photo/photoheader.png" alt="photoheader">
+      </div>
+      <!-- About -->
+      <!--about img-->
+      <div id="A_Propos" class="container mx-auto mt-20  overflow-hidden">
+         <div class="pl-10 py-10 pl-0 sm:pr-5 flex flex-col sm:flex-row">
+            <img class="photo-moi sm:w-1/2" src="photo/photoheader.png" alt="photo-about">
+            <!-- about text-->
+            <div class=" pl-20 sm:ml-4 sm:pl-4 md:ml-4 md:pl-60 mt-4 pr-20 sm:mt-0  pt-14 ">
+               <p class="text-white pt-4"> <kbd class="border py-2 px-2 "> <i class=" hand fa-regular fa-hand "></i>
+                  Bonjour,  Je suis idelton</kbd>
+               </p>
+               <h1 class="text-white text-4xl font-bold pt-4">Développeur Fullstack</h1>
+               <h2 class="text-white pt-4 font-bold ">À Propos de moi  </h2>
+               <p class="para_about text-white pt-4">Avec ma créativité, ma curiosité  et ma persévérance, 
+                  je suis convaincue que je suis en mesure de répondre aux défis de votre entreprise
+                  et ainsi participer à ses succès futurs !
+               </p>
+               <p  class=" para_about text-white pt-3">Aujourd'hui, je recherche une alternance en tant que Concepteur développeur
+                  d'applications afin de consolider mes acquis et pouvoir continuer mes études.
+               </p>
+               <p  class=" para_about text-white pt-4">
+               </p>
+            </div>
+         </div>
+      </div>
+      <!--Separateur-->
+      <div class="trait"></div>
+      <!--Competences--> 
+      <div id="Competences" class="container mx-auto  mt-10 ">
+         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+            <h2 class="text-4xl flex justify-center font-bold text-white pt-6">Compétences</h2>
+            <div class=" img-competences-1 flex justify-center space-x-12 pt-12 sm:overflow-x-auto md:overflow-x-auto:">
+               <img  src="photo-competence/HTML5_logo_and_wordmark.svg" alt="html" width="80">
+               <img src="photo-competence/CSS3_logo_and_wordmark.svg" alt="css" width="80">
+               <img src="photo-competence/Unofficial_JavaScript_logo_2.svg" alt="Js" width="80">
+               <img src="photo-competence/Bootstrap_logo.svg" alt="Bootstrap" width="80">
+               <img src="photo-competence/React_Logo_SVG.svg" alt="React" width="80">
+            </div>
+            <div class="flex justify-center space-x-12 pt-10">
+               <img src="photo-competence/PHP-logo.svg.png" alt="php" width="70">
+               <img src="photo-competence/MySQL.svg" alt="mysql" width="70">
+               <img src="photo-competence/Symfony.jpeg" alt="symfony" width="70">
+               <img src="photo-competence/Node.js_logo.svg" alt="nodejs" width="70">
+            </div>
+            <div class="pt-10">
+               <h1 class="text-4xl flex justify-center font-bold text-white pt-4">Outils</h1>
+               <div class="flex  justify-center space-x-12 pt-10 pb-10 ">
+                  <img src="photo-competence/Visual_Studio_Code_1.35_icon.svg" alt="visual studio" width="70">
+                  <img src="photo-competence/GitLab_icon.svg.png" alt="Git" width="70">
+                  <img src="photo-competence/jest.webp" alt=" Jest"  width="70">
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Separateur-->
+      <div class="trait"></div>
+      <!--TimeLine-->
+      <div id="Projet" class="container mx-auto "   >
+         <section class="timeline-section"  >
+            <h2 class="h1-timeline"> Projet</h2>
+            <div class="timeline-items">
+               <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">Projet 1</div>
+                  <div class="timeline-content">
+                     <h3>Barber&Style</h3>
+                     <img src="photo-timeline/Coiffure_Site.png" alt="site_coiffure" width="500" >
+                     <div>
+                        <button onclick="window.location.href='https://github.com/idelton/Site-coiffure'" class="button">
+                        <span class="button-content btn-gauche">Voir Code  </span>
+                        </button>
+                        <button onclick="window.location.href='https://idelton.github.io/Site-coiffure/ '"  class="button">
+                        <span class="button-content" >Voir site </span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">Projet 2</div>
+                  <div class="timeline-content">
+                     <h3>BarLunch</h3>
+                     <img src="photo-timeline/Barlunch.png" alt="Barlunch" width="500" >
+                     <div>
+                        <button onclick="window.location.href='https://github.com/idelton/barlunch'" class="button">
+                        <span class="button-content btn-gauche">Voir Code  </span>
+                        </button>
+                        <button onclick="window.location.href='https://idelton.github.io/barlunch/'"  class="button">
+                        <span class="button-content" >Voir site </span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">Projet 3</div>
+                  <div class="timeline-content">
+                     <h3>My Blog</h3>
+                     <img src="photo-timeline/Blog.png" alt="MyBlog" width="500" >
+                     <div>
+                        <button onclick="window.location.href=' https://github.com/idelton/MyBlog'" class="button">
+                        <span class="button-content btn-gauche">Voir Code  </span>
+                        </button>
+                        <button onclick="window.location.href='https://idelton.github.io/MyBlog/'"  class="button">
+                        <span class="button-content" >Voir site </span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">projet 4</div>
+                  <div class="timeline-content">
+                     <h3>Portfolio</h3>
+                     <img src="photo/logo_portfolio.png" alt="logo" width="500" >
+                     <div >
+                        <button onclick="window.location.href=' '" class="button">
+                        <span class="button-content btn-gauche">Voir Code  </span>
+                        </button>
+                        <button onclick="window.location.href=''"  class="button">
+                        <span class="button-content" >Voir site </span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <!--Separateur-->
+      <div class="trait"></div>
+      <!--Contact-->
+      <div id="Contact" class="container  mx-auto " style="padding: 40px;">
+         <h2 class="text-4xl flex justify-center font-bold text-white pb-16 ">ME CONTACTER</h2>
+         <img class="pt-10 img-contact" src="photo-Contact/Man-Technologist.png"  style="float: right; margin-right:10%; height: 350px; " alt="">
+         <div class="book " style="margin-left:22%; margin-top: 20px;">
+            <div class="book-block ">
+               <button   onclick="window.location.href='https://github.com/idelton'"><i class="fab fa-github"></i></button>
+               <button style="margin-top:20px;"  onclick="window.location.href='https://www.linkedin.com/in/idr07/'"><i class="fab fa-linkedin"></i>
+               </button>
+               <button  style="margin-top:20px;"  onclick="window.location.href='mailto:votre@email.com'"  > <i class="fab fa-envelope"></i></button>
+            </div>
+            <div class="cover">
+               <p>Contact</p>
+            </div>
+         </div>
+      </div>
+      <!--Footer-->
+      <div class=" footer container " style="margin-top: 2%;padding: 10px;">
+         <div class=" pb-4 pt-4 mt-3 flex justify-between text-white">
+            <div class="pl-4">
+               <p class="pl-2 ">Conçu et développer  &copy;2024 idelton </p>
+            </div>
+            <div>
+               <a class="footer_link pr-3"  onclick="window.location.href='https://www.linkedin.com/in/idr07/'">linkedin</a>
+               <a class=" footer_link pr-3"   onclick="window.location.href='https://github.com/idelton'">Github</a>
+            </div>
+         </div>
+      </div>
+      <script src="index.js"></script>
+      <!--Bootstrap script-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
+         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
+         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+   </body>
+</html>
